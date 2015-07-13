@@ -20,7 +20,7 @@ namespace EasyFarm.Controllers
             db.Thomas.Add("REne");
             return View(db.Invernaderoes.ToList());
         }
-        public void test() { }
+        
         public ActionResult Thomas()
         {
             return View(db.Invernaderoes.First());
