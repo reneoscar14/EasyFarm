@@ -15,9 +15,8 @@ namespace EasyFarm.Controllers
         private EasyFarmContext db = new EasyFarmContext();
 
         // GET: /Invernadero/
-        public ActionResult Index(double Temperatura, double HumedadRelativa)
+        public ActionResult Index()
         {
-            db.Thomas.Add("REne");
             return View(db.Invernaderoes.ToList());
         }
         
