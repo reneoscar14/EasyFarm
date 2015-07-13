@@ -1,0 +1,114 @@
+﻿@model EasyFarm.Models.Invernadero
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Invernadero</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Temperatura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Temperatura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HumedadRelativa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HumedadRelativa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HumedadSuelo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HumedadSuelo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoCultivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoCultivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calefaccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calefaccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ventilador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ventilador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extractor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extractor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flujo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flujo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Iluminacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Iluminacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Riego)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Riego)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EtapaRiego)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EtapaRiego)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InvernaderoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

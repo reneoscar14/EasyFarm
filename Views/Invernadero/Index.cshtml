@@ -1,0 +1,99 @@
+﻿@model IEnumerable<EasyFarm.Models.Invernadero>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Temperatura)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.HumedadRelativa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HumedadSuelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoCultivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Calefaccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ventilador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Extractor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Flujo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Iluminacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Riego)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EtapaRiego)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Temperatura)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.HumedadRelativa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HumedadSuelo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoCultivo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Calefaccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ventilador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Extractor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Flujo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Modo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Iluminacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Riego)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EtapaRiego)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.InvernaderoId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.InvernaderoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.InvernaderoId })
+        </td>
+    </tr>
+}
+
+</table>

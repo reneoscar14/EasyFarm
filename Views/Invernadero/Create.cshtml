@@ -1,0 +1,129 @@
+﻿@model EasyFarm.Models.Invernadero
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Invernadero</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Temperatura, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Temperatura)
+                @Html.ValidationMessageFor(model => model.Temperatura)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.HumedadRelativa, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.HumedadRelativa)
+                @Html.ValidationMessageFor(model => model.HumedadRelativa)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.HumedadSuelo, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.HumedadSuelo)
+                @Html.ValidationMessageFor(model => model.HumedadSuelo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TipoCultivo, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TipoCultivo)
+                @Html.ValidationMessageFor(model => model.TipoCultivo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Calefaccion, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Calefaccion)
+                @Html.ValidationMessageFor(model => model.Calefaccion)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ventilador, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Ventilador)
+                @Html.ValidationMessageFor(model => model.Ventilador)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Extractor, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Extractor)
+                @Html.ValidationMessageFor(model => model.Extractor)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Flujo, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Flujo)
+                @Html.ValidationMessageFor(model => model.Flujo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Modo, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Modo)
+                @Html.ValidationMessageFor(model => model.Modo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Iluminacion, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Iluminacion)
+                @Html.ValidationMessageFor(model => model.Iluminacion)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Riego, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Riego)
+                @Html.ValidationMessageFor(model => model.Riego)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EtapaRiego, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EtapaRiego)
+                @Html.ValidationMessageFor(model => model.EtapaRiego)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
