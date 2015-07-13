@@ -19,6 +19,7 @@ namespace EasyFarm.Controllers
         {
             return View(db.Invernaderoes.ToList());
         }
+        public void test() { }
         
         public ActionResult Thomas()
         {
