@@ -23,7 +23,7 @@ namespace EasyFarm.Models
         public int Modo { get; set; }
         public int Iluminacion { get; set; }
         public int Riego { get; set; }
-        [Display(Name = "Humedad Relativa")]
+        [Display(Name = "Etapa de Riego")]
         public int EtapaRiego { get; set; }
 
     }
