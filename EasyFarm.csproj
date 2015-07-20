@@ -161,6 +161,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvernaderoController.cs" />
+    <Compile Include="Controllers\Util.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -222,7 +223,6 @@
     <Content Include="Views\Invernadero\Details.cshtml" />
     <Content Include="Views\Invernadero\Edit.cshtml" />
     <Content Include="Views\Invernadero\Index.cshtml" />
-    <Content Include="Views\Invernadero\Thomas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

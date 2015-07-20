@@ -20,8 +20,7 @@ namespace EasyFarm
             );
             routes.MapRoute(
                name: "Invernadero",
-               url: "{controller}/{action}/{Temperatura}/{HumedadRelativa}",
-               defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+               url: "{controller}/{action}/{TipoCultivo}/{Modo}/{Temperatura}/{HumedadRelativa}/{HumedadSuelo}/{parametros}/{Riego}/{TemporizadorRiego}/{Flujo}"
            );
         }
     }

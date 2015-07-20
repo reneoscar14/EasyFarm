@@ -6,11 +6,24 @@
 
 <h2>Index</h2>
 
+<script type="text/javascript">
+    var int = self.setInterval("refresh()", 1000);
+    function refresh() {
+        location.reload(true);
+    }
+</script>
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoCultivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modo)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Temperatura)
         </th>
@@ -19,9 +32,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.HumedadSuelo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TipoCultivo)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Calefaccion)
@@ -33,19 +43,22 @@
             @Html.DisplayNameFor(model => model.Extractor)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Flujo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Modo)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Iluminacion)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Riego)
         </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.CondicionRiego)
+        </th>*@
         <th>
-            Etapa de Riego
+            @Html.DisplayNameFor(model => model.TemporizadorRiego)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Flujo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
         </th>
         <th></th>
     </tr>
@@ -53,45 +66,51 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Temperatura)
+          <center> @Html.DisplayFor(modelItem => item.TipoCultivo)</center>
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.HumedadRelativa)
-        </td>
+            <center>  @Html.DisplayFor(modelItem => item.Modo)</center>
+</td>
         <td>
-            @Html.DisplayFor(modelItem => item.HumedadSuelo)
-        </td>
+            <center> @Html.DisplayFor(modelItem => item.Temperatura)</center>
+</td>
         <td>
-            @Html.DisplayFor(modelItem => item.TipoCultivo)
-        </td>
+            <center> @Html.DisplayFor(modelItem => item.HumedadRelativa)</center>
+</td>
         <td>
-            @Html.DisplayFor(modelItem => item.Calefaccion)
-        </td>
+            <center> @Html.DisplayFor(modelItem => item.HumedadSuelo)</center>
+</td>
         <td>
-            @Html.DisplayFor(modelItem => item.Ventilador)
-        </td>
+            <center>  @Html.DisplayFor(modelItem => item.Calefaccion)</center>
+</td>
         <td>
-            @Html.DisplayFor(modelItem => item.Extractor)
-        </td>
+            <center>@Html.DisplayFor(modelItem => item.Ventilador)</center>
+</td>
         <td>
-            @Html.DisplayFor(modelItem => item.Flujo)
-        </td>
+            <center> @Html.DisplayFor(modelItem => item.Extractor)</center>
+</td>
         <td>
-            @Html.DisplayFor(modelItem => item.Modo)
-        </td>
+            <center> @Html.DisplayFor(modelItem => item.Iluminacion)</center>
+</td>
         <td>
-            @Html.DisplayFor(modelItem => item.Iluminacion)
-        </td>
+            <center> @Html.DisplayFor(modelItem => item.Riego)</center>
+</td>
+        @*<td>
+            <center> @Html.DisplayFor(modelItem => item.CondicionRiego)</center>
+</td>*@
         <td>
-            @Html.DisplayFor(modelItem => item.Riego)
-        </td>
+            <center>@Html.DisplayFor(modelItem => item.TemporizadorRiego)</center>
+</td>
         <td>
-            @Html.DisplayFor(modelItem => item.EtapaRiego)
-        </td>
+            <center> @Html.DisplayFor(modelItem => item.Flujo)</center>
+</td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.InvernaderoId }) |
+            <center>@Html.DisplayFor(modelItem => item.date)</center>
+</td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.InvernaderoId }) |
             @Html.ActionLink("Details", "Details", new { id=item.InvernaderoId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.InvernaderoId })
+            @Html.ActionLink("Delete", "Delete", new { id=item.InvernaderoId })*@
         </td>
     </tr>
 }

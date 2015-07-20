@@ -11,6 +11,22 @@
 	<hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.TipoCultivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoCultivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modo)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Temperatura)
         </dt>
 
@@ -32,14 +48,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.HumedadSuelo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TipoCultivo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TipoCultivo)
         </dd>
 
         <dt>
@@ -67,22 +75,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Flujo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Flujo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Modo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Modo)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Iluminacion)
         </dt>
 
@@ -99,11 +91,35 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.EtapaRiego)
+            @Html.DisplayNameFor(model => model.CondicionRiego)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.EtapaRiego)
+            @Html.DisplayFor(model => model.CondicionRiego)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TemporizadorRiego)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TemporizadorRiego)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flujo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flujo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
         </dd>
 
     </dl>

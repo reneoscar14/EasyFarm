@@ -17,6 +17,22 @@
         @Html.ValidationSummary(true)
 
         <div class="form-group">
+            @Html.LabelFor(model => model.TipoCultivo, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TipoCultivo)
+                @Html.ValidationMessageFor(model => model.TipoCultivo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Modo, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Modo)
+                @Html.ValidationMessageFor(model => model.Modo)
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.Temperatura, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Temperatura)
@@ -37,14 +53,6 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.HumedadSuelo)
                 @Html.ValidationMessageFor(model => model.HumedadSuelo)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.TipoCultivo, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TipoCultivo)
-                @Html.ValidationMessageFor(model => model.TipoCultivo)
             </div>
         </div>
 
@@ -73,22 +81,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Flujo, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Flujo)
-                @Html.ValidationMessageFor(model => model.Flujo)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Modo, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Modo)
-                @Html.ValidationMessageFor(model => model.Modo)
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.Iluminacion, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Iluminacion)
@@ -105,10 +97,34 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.EtapaRiego, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CondicionRiego, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.EtapaRiego)
-                @Html.ValidationMessageFor(model => model.EtapaRiego)
+                @Html.EditorFor(model => model.CondicionRiego)
+                @Html.ValidationMessageFor(model => model.CondicionRiego)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TemporizadorRiego, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TemporizadorRiego)
+                @Html.ValidationMessageFor(model => model.TemporizadorRiego)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Flujo, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Flujo)
+                @Html.ValidationMessageFor(model => model.Flujo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.date, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.date)
+                @Html.ValidationMessageFor(model => model.date)
             </div>
         </div>
 

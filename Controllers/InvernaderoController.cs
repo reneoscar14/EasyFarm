@@ -19,10 +19,15 @@ namespace EasyFarm.Controllers
         {
             return View(db.Invernaderoes.ToList());
         }
-        public void test() { }
-        public ActionResult Thomas()
+        public List<Invernadero> getData() 
         {
-            return View(db.Invernaderoes.First());
+            return (db.Invernaderoes.ToList());
+        }
+        public void SetInvernadero(string TipoCultivo, string Modo, double Temperatura, double HumedadRelativa, double HumedadSuelo, string parametros, string Riego, int TemporizadorRiego, int Flujo) 
+        {
+            var invernadero = new Util().getInvernadero(TipoCultivo, Modo, Temperatura, HumedadRelativa, HumedadSuelo, parametros, Riego, TemporizadorRiego, Flujo);
+            db.Invernaderoes.Add(invernadero);
+            db.SaveChanges();
         }
 
         // GET: /Invernadero/Details/5
@@ -51,7 +56,7 @@ namespace EasyFarm.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="InvernaderoId,Temperatura,HumedadRelativa,HumedadSuelo,TipoCultivo,Calefaccion,Ventilador,Extractor,Flujo,Modo,Iluminacion,Riego,EtapaRiego")] Invernadero invernadero)
+        public ActionResult Create([Bind(Include="InvernaderoId,TipoCultivo,Modo,Temperatura,HumedadRelativa,HumedadSuelo,Calefaccion,Ventilador,Extractor,Iluminacion,Riego,CondicionRiego,TemporizadorRiego,Flujo,date")] Invernadero invernadero)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +88,7 @@ namespace EasyFarm.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="InvernaderoId,Temperatura,HumedadRelativa,HumedadSuelo,TipoCultivo,Calefaccion,Ventilador,Extractor,Flujo,Modo,Iluminacion,Riego,EtapaRiego")] Invernadero invernadero)
+        public ActionResult Edit([Bind(Include="InvernaderoId,TipoCultivo,Modo,Temperatura,HumedadRelativa,HumedadSuelo,Calefaccion,Ventilador,Extractor,Iluminacion,Riego,CondicionRiego,TemporizadorRiego,Flujo,date")] Invernadero invernadero)
         {
             if (ModelState.IsValid)
             {

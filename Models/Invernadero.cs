@@ -9,22 +9,26 @@ namespace EasyFarm.Models
     public class Invernadero
     {
         public int InvernaderoId { get; set; }
+        [Display(Name = "Cultivo")]
+        public string TipoCultivo { get; set; }
+        public string Modo { get; set; }
         public double Temperatura { get; set; }
-        [Display(Name="Humedad Relativa")]
+        [Display(Name="HR")]
         public double HumedadRelativa { get; set; }
-        [Display(Name = "Humedad del Suelo")]
+        [Display(Name = "HS")]
         public double HumedadSuelo { get; set; }
-        [Display(Name = "Tipo de Cultivo")]
-        public int TipoCultivo { get; set; }
-        public int Calefaccion { get; set; }
-        public int Ventilador { get; set; }
-        public int Extractor { get; set; }
+        public string Calefaccion { get; set; }
+        public string Ventilador { get; set; }
+        public string Extractor { get; set; }
+        public string Iluminacion { get; set; }
+        public string Riego { get; set; }
+        [Display(Name = "CR")]
+        public string CondicionRiego { get; set; }
+        [Display(Name = "TR")]
+        public int TemporizadorRiego { get; set; }
         public double Flujo { get; set; }
-        public int Modo { get; set; }
-        public int Iluminacion { get; set; }
-        public int Riego { get; set; }
-        [Display(Name = "Etapa de Riego")]
-        public int EtapaRiego { get; set; }
+        [Display(Name = "Actualizado")]
+        public DateTime date { get; set; }
 
     }
 }
