@@ -48,9 +48,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Riego)
         </th>
-        @*<th>
+        <th>
             @Html.DisplayNameFor(model => model.CondicionRiego)
-        </th>*@
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.TemporizadorRiego)
         </th>
@@ -95,9 +95,9 @@
         <td>
             <center> @Html.DisplayFor(modelItem => item.Riego)</center>
 </td>
-        @*<td>
+        <td>
             <center> @Html.DisplayFor(modelItem => item.CondicionRiego)</center>
-</td>*@
+</td>
         <td>
             <center>@Html.DisplayFor(modelItem => item.TemporizadorRiego)</center>
 </td>
@@ -107,11 +107,7 @@
         <td>
             <center>@Html.DisplayFor(modelItem => item.date)</center>
 </td>
-        <td>
-            @*@Html.ActionLink("Edit", "Edit", new { id=item.InvernaderoId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.InvernaderoId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.InvernaderoId })*@
-        </td>
+       
     </tr>
 }
 
