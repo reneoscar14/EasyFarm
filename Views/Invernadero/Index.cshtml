@@ -1,20 +1,20 @@
 ﻿@model IEnumerable<EasyFarm.Models.Invernadero>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Estados";
 }
 
 <h2>Index</h2>
 
 <script type="text/javascript">
-    var int = self.setInterval("refresh()", 1000);
-    function refresh() {
-        location.reload(true);
-    }
+    //var int = self.setInterval("refresh()", 1000);
+    //function refresh() {
+    //    location.reload(true);
+    //}
 </script>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @*@Html.ActionLink("Create New", "Create")*@
 </p>
 <table class="table">
     <tr>
@@ -63,51 +63,52 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
-          <center> @Html.DisplayFor(modelItem => item.TipoCultivo)</center>
+            <center> @Html.DisplayFor(modelItem => item.TipoCultivo)</center>
         </td>
         <td>
             <center>  @Html.DisplayFor(modelItem => item.Modo)</center>
-</td>
+        </td>
         <td>
             <center> @Html.DisplayFor(modelItem => item.Temperatura)</center>
-</td>
+        </td>
         <td>
             <center> @Html.DisplayFor(modelItem => item.HumedadRelativa)</center>
-</td>
+        </td>
         <td>
             <center> @Html.DisplayFor(modelItem => item.HumedadSuelo)</center>
-</td>
+        </td>
         <td>
             <center>  @Html.DisplayFor(modelItem => item.Calefaccion)</center>
-</td>
+        </td>
         <td>
             <center>@Html.DisplayFor(modelItem => item.Ventilador)</center>
-</td>
+        </td>
         <td>
             <center> @Html.DisplayFor(modelItem => item.Extractor)</center>
-</td>
+        </td>
         <td>
             <center> @Html.DisplayFor(modelItem => item.Iluminacion)</center>
-</td>
+        </td>
         <td>
             <center> @Html.DisplayFor(modelItem => item.Riego)</center>
-</td>
+        </td>
         <td>
             <center> @Html.DisplayFor(modelItem => item.CondicionRiego)</center>
-</td>
+        </td>
         <td>
             <center>@Html.DisplayFor(modelItem => item.TemporizadorRiego)</center>
-</td>
+        </td>
         <td>
             <center> @Html.DisplayFor(modelItem => item.Flujo)</center>
-</td>
+        </td>
         <td>
             <center>@Html.DisplayFor(modelItem => item.date)</center>
-</td>
-       
+        </td>
+
     </tr>
 }
 

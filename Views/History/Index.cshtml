@@ -1,0 +1,157 @@
+﻿@model EasyFarm.Models.Invernadero
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var lastUpdate = DateTime.Now.Subtract(Model.date).ToString(@"hh\:mm");
+    
+    
+}
+<style>
+    input {
+        float:right;
+        margin-right:100px;
+        text-align:center;
+    }
+    label {
+
+        margin-left:30px;
+    }
+    
+    .foot {
+        height:220px;
+    }
+
+</style>
+<h2>Estados </h2>
+
+<div>
+    <span>Ultima actualización hace: <span id="lastUpdate">@lastUpdate</span> hh:min </span>
+    <table>
+        <tr>
+            <td>
+                    @Html.LabelFor(m => m.TipoCultivo):
+                    @Html.TextBoxFor(m => m.TipoCultivo, new { @readonly = "readonly" })
+            </td>
+            <td >
+                @Html.LabelFor(m => m.Modo):
+                @Html.TextBoxFor(m => m.Modo, new { @readonly = "readonly" })
+            </td>
+        </tr>
+        <tr>
+            <td >
+                @Html.LabelFor(m => m.Temperatura):
+                @Html.TextBoxFor(m => m.Temperatura, new { @readonly = "readonly" })
+            </td>
+            <td >
+                @Html.Label("Humedad Relativa:")
+                @Html.TextBoxFor(m => m.HumedadRelativa, new { @readonly = "readonly" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Humedad Suelo:")
+                @Html.TextBoxFor(m => m.HumedadSuelo, new { @readonly = "readonly" })
+            </td>
+            <td>
+                @Html.LabelFor(m => m.Calefaccion):
+                @Html.TextBoxFor(m => m.Calefaccion, new { @readonly = "readonly" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Ventilador):
+                @Html.TextBoxFor(m => m.Ventilador, new { @readonly = "readonly" })
+            </td>
+            <td>
+                @Html.LabelFor(m => m.Extractor):
+                @Html.TextBoxFor(m => m.Extractor, new { @readonly = "readonly" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Iluminacion):
+                @Html.TextBoxFor(m => m.Iluminacion, new { @readonly = "readonly" })
+            </td>
+            <td>
+                @Html.LabelFor(m => m.Riego):
+                @Html.TextBoxFor(m => m.Riego, new { @readonly = "readonly" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Condición Riego:")
+                @Html.TextBoxFor(m => m.CondicionRiego, new { @readonly = "readonly" })
+            </td>
+            <td>
+                @Html.Label("Temporizador Riego:")
+                @Html.TextBoxFor(m => m.TemporizadorRiego, new { @readonly = "readonly" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Flujo):
+                @Html.TextBoxFor(m => m.Flujo, new { @readonly = "readonly" })
+            </td>
+            <td>
+                @Html.LabelFor(m => m.date):
+                @Html.TextBoxFor(m => m.date, new { @readonly = "readonly" })
+            </td>
+        </tr>
+    </table>
+    <div class="foot">
+
+
+    </div>
+
+
+</div>
+<script type="text/javascript">
+    
+       
+        var TipoCultivo = $("#TipoCultivo");
+        var Modo = $("#Modo");
+        var Temperatura = $("#Temperatura");
+        var HumedadRelativa = $("#HumedadRelativa");
+        var HumedadSuelo = $("#HumedadSuelo");
+        var Calefaccion = $("#Calefaccion");
+        var Ventilador = $("#Ventilador");
+        var Extractor = $("#Extractor");
+        var Iluminacion = $("#Iluminacion");
+        var CondicionRiego = $("#CondicionRiego");
+        var TemporizadorRiego = $("#TemporizadorRiego");
+        var Flujo = $("#Flujo");
+        var date = $("#date");
+        var lastUpdate = $("#lastUpdate");
+
+        var int = self.setInterval("refresh()", 1000);
+        function refresh() {
+
+            $.get("@Url.Action("Update")", function (result)
+            {
+
+                TipoCultivo.val(result.TipoCultivo);
+                Modo.val(result.Modo);
+                Temperatura.val(result.Temperatura);
+                HumedadRelativa.val(result.HumedadRelativa);
+                HumedadSuelo.val(result.HumedadSuelo);
+                Calefaccion.val(result.Calefaccion);
+                Ventilador.val(result.Ventilador);
+                Extractor.val(result.Extractor);
+                Iluminacion.val(result.Iluminacion);
+                CondicionRiego.val(result.CondicionRiego);
+                TemporizadorRiego.val(result.TemporizadorRiego);
+                Flujo.val(result.Flujo);
+                //date.val(result.date);
+                //var timeStamp = (@DateTime.Now - date.val()).ToString("hh\:mm");
+                var asd = new Date(parseInt(result.date.substr(6)));
+                var a = asd.getDay() + "/" + asd.getMonth() + "/" + asd.getFullYear() + " " + asd.getHours() + ":" + asd.getMinutes() + ":" + asd.getSeconds() + " " + asd.getTime()
+                console.log(a, asd.getDay(), asd);
+        
+            })
+        }
+
+
+</script>
+

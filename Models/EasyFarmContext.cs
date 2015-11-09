@@ -19,7 +19,8 @@ namespace EasyFarm.Models
         {
         }
 
-        public System.Data.Entity.DbSet<EasyFarm.Models.Invernadero> Invernaderoes { get; set; }
+        public DbSet<Invernadero> Invernaderoes { get; set; }
+        public DbSet<User> Usuarios { get; set; }
     
     }
 }

@@ -53,7 +53,7 @@ namespace EasyFarm.Controllers
             switch (entered) 
             {
                 case "R":
-                    return "Riego0";
+                    return "Riego";
                 case "E":
                     return "Espera";
                 case "F":

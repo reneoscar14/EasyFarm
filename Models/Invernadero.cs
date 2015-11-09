@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -28,6 +30,7 @@ namespace EasyFarm.Models
         public int TemporizadorRiego { get; set; }
         public double Flujo { get; set; }
         [Display(Name = "Actualizado")]
+        [JsonConverter(typeof(JavaScriptDateTimeConverter))]
         public DateTime date { get; set; }
 
     }

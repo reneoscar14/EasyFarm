@@ -17,7 +17,7 @@ namespace EasyFarm.Controllers
         // GET: /Invernadero/
         public ActionResult Index()
         {
-            return View(db.Invernaderoes.ToList());
+            return View(db.Invernaderoes.OrderByDescending(x => x.date).Take(10).ToList());
         }
         public List<Invernadero> getData() 
         {

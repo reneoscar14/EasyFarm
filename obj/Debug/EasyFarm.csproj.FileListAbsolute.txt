@@ -53,3 +53,9 @@ c:\users\oscar\documents\visual studio 2013\Projects\EasyFarm\EasyFarm\bin\Micro
 c:\users\oscar\documents\visual studio 2013\Projects\EasyFarm\EasyFarm\obj\Debug\EasyFarm.csprojResolveAssemblyReference.cache
 c:\users\oscar\documents\visual studio 2013\Projects\EasyFarm\EasyFarm\obj\Debug\EasyFarm.dll
 c:\users\oscar\documents\visual studio 2013\Projects\EasyFarm\EasyFarm\obj\Debug\EasyFarm.pdb
+C:\Users\Oscar\Documents\Visual Studio 2013\Projects\EasyFarm\EasyFarm\bin\System.Net.Http.Formatting.dll
+C:\Users\Oscar\Documents\Visual Studio 2013\Projects\EasyFarm\EasyFarm\bin\System.Web.Http.dll
+C:\Users\Oscar\Documents\Visual Studio 2013\Projects\EasyFarm\EasyFarm\bin\System.Web.Http.WebHost.dll
+C:\Users\Oscar\Documents\Visual Studio 2013\Projects\EasyFarm\EasyFarm\bin\System.Net.Http.Formatting.xml
+C:\Users\Oscar\Documents\Visual Studio 2013\Projects\EasyFarm\EasyFarm\bin\System.Web.Http.xml
+C:\Users\Oscar\Documents\Visual Studio 2013\Projects\EasyFarm\EasyFarm\bin\System.Web.Http.WebHost.xml
