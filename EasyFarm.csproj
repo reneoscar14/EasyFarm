@@ -263,6 +263,7 @@
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\History\Index.cshtml" />
     <Content Include="Views\VideoMonitor\Index.cshtml" />
+    <Content Include="Views\Login\Register.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -29,5 +29,15 @@ namespace EasyFarm.Controllers
             return RedirectToAction("Index");
             }
         }
+        public ActionResult Register() 
+        {
+            return View();
+        }
+        public ActionResult PostRegister(User user) 
+        {
+            db.Usuarios.Add(user);
+            db.SaveChanges();
+            return RedirectToAction("Index", "Invernadero");
+        }
 	}
 }

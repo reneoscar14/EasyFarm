@@ -1,17 +1,13 @@
 ﻿@model EasyFarm.Models.User
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Register";
     Layout = "~/views/shared/_layoutlogin.cshtml";
-    var data = false;
-    if (TempData["Failed"] != null)
-    {
-        bool.TryParse(TempData["Failed"].ToString(), out data);
-    }
+   
 }
 
-<h2>EasyFarm - Login</h2>
- 
-<form action="@Url.Action("Login")" method="post">
+<h2>EasyFarm - Register</h2>
+
+<form action="@Url.Action("PostRegister")" method="post">
     <table>
         <tr>
             <td>
@@ -26,16 +22,13 @@
                 <label for="pwrd">Contraseña:</label>
             </td>
             <td>
-                @Html.TextBoxFor(m => m.Password, new { @placeholder = "Contraseña", @type= "password" })
+                @Html.TextBoxFor(m => m.Password, new { @placeholder = "Contraseña", @type = "password" })
             </td>
         </tr>
-        
+
     </table>
 
     <input type="submit" class="btn btn-primary" value="Entrar" />
 </form>
-<a href="@Url.Action("Register")">Regístrese Aquí</a>
-@if(data){
-<span>Usuario / Contraseña Invalido</span>
-}
+
 
