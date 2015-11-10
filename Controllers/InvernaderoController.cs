@@ -23,7 +23,7 @@ namespace EasyFarm.Controllers
         {
             return (db.Invernaderoes.ToList());
         }
-        public void Set(string TipoCultivo, string Modo, double Temperatura, double HumedadRelativa, double HumedadSuelo, string parametros, string Riego, int TemporizadorRiego, int Flujo) 
+        public void envio(string TipoCultivo, string Modo, double Temperatura, double HumedadRelativa, double HumedadSuelo, string parametros, string Riego, int TemporizadorRiego, int Flujo) 
         {
             var invernadero = new Util().getInvernadero(TipoCultivo, Modo, Temperatura, HumedadRelativa, HumedadSuelo, parametros, Riego, TemporizadorRiego, Flujo);
             db.Invernaderoes.Add(invernadero);
