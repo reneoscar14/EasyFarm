@@ -2,15 +2,21 @@
 
 @{
     ViewBag.Title = "Estados";
+    var list = Model;
 }
 
 <h2>Index</h2>
 
 <script type="text/javascript">
-    //var int = self.setInterval("refresh()", 1000);
-    //function refresh() {
-    //    location.reload(true);
-    //}
+    @*var int = self.setInterval("refresh()", 1000);
+    function refresh() {
+        $.get("@Url.Action("Update")", function (result)
+        {
+            (IEnumerable<EasyFarm.Models.Invernadero>)result;
+            Dim jobjects As IEnumerable(Of JObject) = 
+        results.Select(Function(x) JObject.FromObject(x))
+        } )  
+    }*@
 </script>
 
 <p>
@@ -63,7 +69,7 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model)
+@foreach (var item in list)
 {
     <tr>
         <td>

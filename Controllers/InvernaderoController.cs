@@ -132,6 +132,14 @@ namespace EasyFarm.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+
+        }
+        public JsonResult Update()
+        {
+            return Json(db.Invernaderoes.OrderByDescending(x => x.date).Take(10).ToList(), JsonRequestBehavior.AllowGet);
+            
         }
     }
 }
+
+
