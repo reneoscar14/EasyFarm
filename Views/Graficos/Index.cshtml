@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Estadisticas</h2>
+<div id="curve_chart" style="width: 900px; height: 500px"></div>
+
+
+<script type="text/javascript">
+    var temps;
+    $(document).ready(function () {
+        @*$.ajax({
+            type: "GET",
+            url: "@Url.Action("getTemp")",
+            success: function (result) {
+                temps = result;
+                console.log("sds", result)
+                console.log("temps", temps);
+                // Succesful, load visualization API and send data
+
+            }
+        });*@
+        google.setOnLoadCallback(drawChart);
+
+
+    });
+
+    function drawChart(temps) {
+        $.get("@Url.Action("getTemp")", function (result) {
+             console.log("result", result);
+             temps = result;
+             chart.draw(data, options);
+
+         });
+        console.log(temps);
+        //var data = google.visualization.arrayToDataTable([
+        //  ['Year', 'Sales', 'Expenses'],
+        //  ['2004', 1000, 400],
+        //  ['2005', 1170, 460],
+        //  ['2006', 660, 1120],
+        //  ['2007', 1030, 540]
+        //]);
+        
+
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Tiempo');
+        data.addColumn('date', 'Temperatura');
+        //data.addColumn('number', 'The Avengers');
+        //data.addColumn('number', 'Transformers: Age of Extinction');
+
+        
+        data.addRows([
+          [1, 37.8, 80.8, 41.8],
+          [2, 30.9, 69.5, 32.4],
+          [3, 25.4, 57, 25.7],
+          [4, 11.7, 18.8, 10.5],
+          [5, 11.9, 17.6, 10.4],
+          [6, 8.8, 13.6, 7.7],
+          [7, 7.6, 12.3, 9.6],
+          [8, 12.3, 29.2, 10.6],
+          [9, 16.9, 42.9, 14.8],
+          [10, 12.8, 30.9, 11.6],
+          [11, 5.3, 7.9, 4.7],
+          [12, 6.6, 8.4, 5.2],
+          [13, 4.8, 6.3, 3.6],
+          [14, 4.2, 6.2, 3.4]
+        ]);
+
+        var options = {
+            title: 'Company Performance',
+            curveType: 'function',
+            legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+
+    }
+</script>

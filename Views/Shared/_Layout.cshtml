@@ -9,6 +9,14 @@
     <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
     <!-- modernizr enables HTML5 elements and feature detects -->
     <script type="text/javascript" src="~/Scripts/modernizr-1.5.min.js"></script>
+    <script type="text/javascript"
+            src="https://www.google.com/jsapi?autoload={
+            'modules':[{
+              'name':'visualization',
+              'version':'1',
+              'packages':['corechart']
+            }]
+          }"></script>
 </head>
 
 <body>
@@ -28,6 +36,7 @@
 
                         <li>@Html.ActionLink("Estados", "Index", "History", null, new { })</li>
                         <li>@Html.ActionLink("Historicos", "Index", "Invernadero", null, new { })</li>
+                        <li>@Html.ActionLink("Gráficos", "Index", "Graficos", null, new { })</li>
                         <li>@Html.ActionLink("VideoMonitores", "Index", "VideoMonitor", null, new { })</li>
                         <li>@Html.ActionLink("Contactos", "Index", "Contact", null, new {  })</li>
                         @*<li>

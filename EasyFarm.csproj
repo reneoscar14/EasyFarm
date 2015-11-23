@@ -172,6 +172,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GraficosController.cs" />
     <Compile Include="Controllers\HistoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvernaderoController.cs" />
@@ -264,6 +265,7 @@
     <Content Include="Views\History\Index.cshtml" />
     <Content Include="Views\VideoMonitor\Index.cshtml" />
     <Content Include="Views\Login\Register.cshtml" />
+    <Content Include="Views\Graficos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
