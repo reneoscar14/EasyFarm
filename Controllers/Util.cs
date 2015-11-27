@@ -13,7 +13,7 @@ namespace EasyFarm.Controllers
         {
             var invernadero = new Invernadero();
             invernadero.TipoCultivo = formatCultivo(TipoCultivo);
-            invernadero.Modo = Modo;
+            invernadero.Modo = formatModo(Modo);
             invernadero.Temperatura = Temperatura;
             invernadero.HumedadRelativa = HumedadRelativa;
             invernadero.HumedadSuelo = HumedadSuelo;
@@ -77,6 +77,19 @@ namespace EasyFarm.Controllers
             }
         
         
+        }
+        public string formatModo(string entered)
+        {
+            switch (entered)
+            {
+                case "M":
+                    return "Manual";
+                case "A":
+                    return "Automático";
+               
+                default:
+                    return "";
+            }
         }
     }
 }

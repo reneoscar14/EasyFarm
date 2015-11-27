@@ -17,7 +17,15 @@ namespace EasyFarm.Controllers
 
             return View();
         }
-
+        public JsonResult getTemp() 
+        {
+            var last10 = db.Invernaderoes.OrderByDescending(x => x.InvernaderoId).Take(10).Select(x=> 
+                new {
+                        Date = x.date,
+                        Temp = x.Temperatura
+                    });
+            return Json(last10,JsonRequestBehavior.AllowGet);
+        }
 
 
 	}
