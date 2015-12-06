@@ -26,7 +26,36 @@ namespace EasyFarm.Controllers
                     });
             return Json(last10,JsonRequestBehavior.AllowGet);
         }
-
+        public JsonResult getHumRelativa() 
+        {
+            var last10 = db.Invernaderoes.OrderByDescending(x => x.InvernaderoId).Take(10).Select(x=> 
+                new {
+                        Date = x.date,
+                        Temp = x.HumedadRelativa
+                    });
+            return Json(last10,JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult getHumSuelo()
+        {
+            var last10 = db.Invernaderoes.OrderByDescending(x => x.InvernaderoId).Take(10).Select(x =>
+                new
+                {
+                    Date = x.date,
+                    Temp = x.HumedadSuelo
+                });
+            return Json(last10, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult getFlujo()
+        {
+            var last10 = db.Invernaderoes.OrderByDescending(x => x.InvernaderoId).Take(10).Select(x =>
+                new
+                {
+                    Date = x.date,
+                    Temp = x.Flujo
+                });
+            return Json(last10, JsonRequestBehavior.AllowGet);
+        }
+        
 
 	}
 }

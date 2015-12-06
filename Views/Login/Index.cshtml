@@ -8,34 +8,49 @@
         bool.TryParse(TempData["Failed"].ToString(), out data);
     }
 }
+<div id="login_info">
+    <h2 id="header_info">EasyFarm - Login</h2>
 
-<h2>EasyFarm - Login</h2>
- 
-<form action="@Url.Action("Login")" method="post">
-    <table>
-        <tr>
-            <td>
-                <label for="user">Usuario:</label>
-            </td>
-            <td>
-                @Html.TextBoxFor(m => m.UserName, new { @placeholder = "Usuario" })
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="pwrd">Contraseña:</label>
-            </td>
-            <td>
-                @Html.TextBoxFor(m => m.Password, new { @placeholder = "Contraseña", @type= "password" })
-            </td>
-        </tr>
-        
-    </table>
+    <form class="" action="@Url.Action("Login")" method="post">
+        <div id="first" class="form-group">
+            <label class="labels_info" for="user">Usuario:</label>
+            @Html.TextBoxFor(m => m.UserName, new { @placeholder = "Usuario", @class = "form-control", @style = "margin-left: 23%;" })
+        </div>
+        <div class="form-group">
+            <label class="labels_info" for="pwrd">Contraseña:</label>
+            @Html.TextBoxFor(m => m.Password, new { @placeholder = "Contraseña", @type = "password", @class = "form-control", @style = "margin-left: 23%;" })
+        </div>
+                <input id="btn1" type="submit" class="btn btn-primary labels_info " value="Entrar" />
+    </form>
+    <a href="@Url.Action("Register")">Regístrese Aquí</a>
+    @if (data)
+    {
+        <span>Usuario / Contraseña Invalido</span>
+    }
+</div>
+<style>
+    #login_info {
+        border-style: solid;
+        border-width: medium;
+        position: relative;
+        width: 45%;
+        height: 441px;
+        margin-left: 28%;
+        margin-top: 15%;
+        text-align:center;
+    }
+    #header_info {
+        margin-top: 11%;
+    }
+    .labels_info {
+        display:block;
+    }
+    #first {
+        margin-top: 10%;
+    }
+    #btn1 {
+        width:40%;
+        margin-left:31%;
+    }
 
-    <input type="submit" class="btn btn-primary" value="Entrar" />
-</form>
-<a href="@Url.Action("Register")">Regístrese Aquí</a>
-@if(data){
-<span>Usuario / Contraseña Invalido</span>
-}
-
+</style>

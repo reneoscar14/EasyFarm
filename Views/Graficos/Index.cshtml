@@ -6,98 +6,103 @@
 
 <h2>Estadisticas</h2>
 <div id="curve_chart" style="width: 900px; height: 500px"></div>
+<div id="curve_chart1" style="width: 900px; height: 500px"></div>
+<div id="curve_chart2" style="width: 900px; height: 500px"></div>
+<div id="curve_chart3" style="width: 900px; height: 500px"></div>
 
 
 <script type="text/javascript">
     var temps;
     $(document).ready(function () {
-        @*$.ajax({
-            type: "GET",
-            url: "@Url.Action("getTemp")",
-            success: function (result) {
-                temps = result;
-                console.log("sds", result)
-                console.log("temps", temps);
-                // Succesful, load visualization API and send data
-
-            }
-        });*@
+        
         google.setOnLoadCallback(drawChart);
-
 
     });
 
     function drawChart(temps) {
-        var dd = null;
         var data = new google.visualization.DataTable();
-        var sol;
+        var data2 = new google.visualization.DataTable();
+        var data3 = new google.visualization.DataTable();
+        var data4 = new google.visualization.DataTable();
 
-            $.get("@Url.Action("getTemp")", function (result) {
-                PrepareObject(result);
-
-            });
-        //var data = google.visualization.arrayToDataTable([
-        //  ['Year', 'Sales', 'Expenses'],
-        //  ['2004', 1000, 400],
-        //  ['2005', 1170, 460],
-        //  ['2006', 660, 1120],
-        //  ['2007', 1030, 540]
-        //]);
-
-    }
-    function callBack(sol) {
-
-        //console.log("sol", sol);
-        data.addColumn('number', 'Tiempo');
+        //temperatura sobre tiempo
+        $.get("@Url.Action("getTemp")", function (result) {
+        data.addColumn('datetime', 'Tiempo');
         data.addColumn('number', 'Temperatura');
-        data.addColumn('number', 'The Avengers');
-        data.addColumn('number', 'Transformers: Age of Extinction');
-
         data.addRows([
-                     [1, 37.8, 80.8, 41.8],
-                     [2, 30.9, 69.5, 32.4],
-                     [3, 25.4, 57, 25.7],
-                     [4, 11.7, 18.8, 10.5],
-                     [5, 11.9, 17.6, 10.4],
-                     [6, 8.8, 13.6, 7.7],
-                     [7, 7.6, 12.3, 9.6],
-                     [8, 12.3, 29.2, 10.6],
-                     [9, 16.9, 42.9, 14.8],
-                     [10, 12.8, 30.9, 11.6],
-                     [11, 5.3, 7.9, 4.7],
-                     [12, 6.6, 8.4, 5.2],
-                     [13, 4.8, 6.3, 3.6],
-                     [14, 4.2, 6.2, 3.4]
+            [new Date(moment(result[0].Date).year(), moment(result[0].Date).month(), moment(result[0].Date).day(), moment(result[0].Date).hour(), moment(result[0].Date).minute(), moment(result[0].Date).second()), result[0].Temp],
+            [new Date(moment(result[1].Date).year(), moment(result[1].Date).month(), moment(result[1].Date).day(), moment(result[1].Date).hour(), moment(result[1].Date).minute(), moment(result[1].Date).second()), result[1].Temp],
+            [new Date(moment(result[2].Date).year(), moment(result[2].Date).month(), moment(result[2].Date).day(), moment(result[2].Date).hour(), moment(result[2].Date).minute(), moment(result[2].Date).second()), result[2].Temp],
+            [new Date(moment(result[3].Date).year(), moment(result[3].Date).month(), moment(result[3].Date).day(), moment(result[3].Date).hour(), moment(result[3].Date).minute(), moment(result[3].Date).second()), result[3].Temp],
         ]);
-
-
-
         var options = {
-            title: 'Company Performance',
+            title: 'Temperatura / Tiempo',
             curveType: 'function',
-            legend: { position: 'bottom' }
+            legend: { position: 'bottom' },
         };
-
-
-        console.log("result", result);
-        temps = result;
-        dd = temps;
-
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
         chart.draw(data, options);
+        });
+
+        //HumedadRelativa sobre tiempo
+        $.get("@Url.Action("getHumRelativa")", function (result) {
+            data2.addColumn('datetime', 'Tiempo');
+            data2.addColumn('number', 'Humedad Relativa');
+            data2.addRows([
+                [new Date(moment(result[0].Date).year(), moment(result[0].Date).month(), moment(result[0].Date).day(), moment(result[0].Date).hour(), moment(result[0].Date).minute(), moment(result[0].Date).second()), result[0].Temp],
+                [new Date(moment(result[1].Date).year(), moment(result[1].Date).month(), moment(result[1].Date).day(), moment(result[1].Date).hour(), moment(result[1].Date).minute(), moment(result[1].Date).second()), result[1].Temp],
+                [new Date(moment(result[2].Date).year(), moment(result[2].Date).month(), moment(result[2].Date).day(), moment(result[2].Date).hour(), moment(result[2].Date).minute(), moment(result[2].Date).second()), result[2].Temp],
+                [new Date(moment(result[3].Date).year(), moment(result[3].Date).month(), moment(result[3].Date).day(), moment(result[3].Date).hour(), moment(result[3].Date).minute(), moment(result[3].Date).second()), result[3].Temp],
+            ]);
+            var options = {
+                title: 'Humedad Relativa / Tiempo',
+                curveType: 'function',
+                legend: { position: 'bottom' },
+            };
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart1'));
+            chart.draw(data2, options);
+        });
+
+        //Humedad Suelo sobre tiempo
+        $.get("@Url.Action("getHumSuelo")", function (result) {
+            data3.addColumn('datetime', 'Tiempo');
+            data3.addColumn('number', 'Humedad Suelo');
+            data3.addRows([
+                [new Date(moment(result[0].Date).year(), moment(result[0].Date).month(), moment(result[0].Date).day(), moment(result[0].Date).hour(), moment(result[0].Date).minute(), moment(result[0].Date).second()), result[0].Temp],
+                [new Date(moment(result[1].Date).year(), moment(result[1].Date).month(), moment(result[1].Date).day(), moment(result[1].Date).hour(), moment(result[1].Date).minute(), moment(result[1].Date).second()), result[1].Temp],
+                [new Date(moment(result[2].Date).year(), moment(result[2].Date).month(), moment(result[2].Date).day(), moment(result[2].Date).hour(), moment(result[2].Date).minute(), moment(result[2].Date).second()), result[2].Temp],
+                [new Date(moment(result[3].Date).year(), moment(result[3].Date).month(), moment(result[3].Date).day(), moment(result[3].Date).hour(), moment(result[3].Date).minute(), moment(result[3].Date).second()), result[3].Temp],
+            ]);
+            var options = {
+                title: 'Humedad Suelo / Tiempo',
+                curveType: 'function',
+                legend: { position: 'bottom' },
+            };
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart2'));
+            chart.draw(data3, options);
+        });
+
+        //Flujo sobre tiempo
+        $.get("@Url.Action("getFlujo")", function (result) {
+            data4.addColumn('datetime', 'Tiempo');
+            data4.addColumn('number', 'Flujo');
+            data4.addRows([
+                [new Date(moment(result[0].Date).year(), moment(result[0].Date).month(), moment(result[0].Date).day(), moment(result[0].Date).hour(), moment(result[0].Date).minute(), moment(result[0].Date).second()), result[0].Temp],
+                [new Date(moment(result[1].Date).year(), moment(result[1].Date).month(), moment(result[1].Date).day(), moment(result[1].Date).hour(), moment(result[1].Date).minute(), moment(result[1].Date).second()), result[1].Temp],
+                [new Date(moment(result[2].Date).year(), moment(result[2].Date).month(), moment(result[2].Date).day(), moment(result[2].Date).hour(), moment(result[2].Date).minute(), moment(result[2].Date).second()), result[2].Temp],
+                [new Date(moment(result[3].Date).year(), moment(result[3].Date).month(), moment(result[3].Date).day(), moment(result[3].Date).hour(), moment(result[3].Date).minute(), moment(result[3].Date).second()), result[3].Temp],
+            ]);
+            var options = {
+                title: 'Flujo / Tiempo',
+                curveType: 'function',
+                legend: { position: 'bottom' },
+            };
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart3'));
+            chart.draw(data4, options);
+        });
+
     }
 
-    function PrepareObject(result, lol) {
-        sol = result.forEach(function (item, index, array) {
-            var date = new Date(parseInt(item.Date.substr(6)));
-            console.log("inde", index, date, item.Temp);
-            return [item.Date, item.Temp]
-        })
-        lol(sol);
-        function lol(sol)
-        {
-            callBack(sol);
-        }
-    }
+    
 
 </script>
